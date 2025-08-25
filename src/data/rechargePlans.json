@@ -1,0 +1,44 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "name": "Basic Pack",
+      "price": 99,
+      "credits": 100,
+      "popular": false,
+      "validity": 7,
+      "features": ["100 Chat Credits", "7 Days Validity", "Basic Support"],
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Popular Pack", 
+      "price": 299,
+      "credits": 350,
+      "popular": true,
+      "validity": 30,
+      "features": ["350 Chat Credits", "30 Days Validity", "Priority Support", "1 Free Profile Unlock"],
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Premium Pack",
+      "price": 599,
+      "credits": 800,
+      "popular": false,
+      "validity": 60,
+      "features": ["800 Chat Credits", "60 Days Validity", "24/7 Priority Support", "3 Free Profile Unlocks", "Exclusive Characters"],
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "name": "Ultimate Pack",
+      "price": 999,
+      "credits": 1500,
+      "popular": false,
+      "validity": 90,
+      "features": ["1500 Chat Credits", "90 Days Validity", "24/7 Premium Support", "5 Free Profile Unlocks", "All Exclusive Characters", "Early Access to New Features"],
+      "isActive": true
+    }
+  ]
+}

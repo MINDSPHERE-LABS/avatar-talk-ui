@@ -40,8 +40,8 @@ const ProfilePage = ({ profile, onNavigate }) => {
 
   const handleStartChat = () => {
     if (!fullProfile) return;
-    const botUsername = "Proff_Minakshi_bot";
-    const chatUrl = `https://t.me/${botUsername}?start=p_${fullProfile.profileKey}`;
+    // const botUsername = "Proff_Minakshi_bot";
+    const chatUrl = `https://t.me/${fullProfile.botUsername}?=p_${fullProfile.name.toLowerCase()}`;
     window.open(chatUrl, '_blank');
   };
 

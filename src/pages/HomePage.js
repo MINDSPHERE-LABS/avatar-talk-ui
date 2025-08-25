@@ -196,9 +196,6 @@ const HomePage = ({ onNavigate }) => {
         </>
       )}
 
-      <div className="bot-reference">
-        <p>@Aarushi_thakurmybot</p>
-      </div>
     </div>
   );
 };

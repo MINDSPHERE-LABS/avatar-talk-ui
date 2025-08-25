@@ -3,8 +3,10 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
 import RechargePage from './pages/RechargePage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { setupScreenshotProtection } from './screenshotProtection';
+// import RechargePage from './pages/RechargePage';
 
 
 function App() {

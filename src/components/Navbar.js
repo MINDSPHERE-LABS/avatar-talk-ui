@@ -45,6 +45,21 @@ const Navbar = ({ currentPage, currentProfile, credits, onNavigate, onBack, onFo
           <span>{credits} Credits</span>
         </div>
         
+        {/* Recharge button - visible on desktop */}
+        <button 
+          className="login-btn desktop-only"
+          onClick={() => onNavigate('recharge')}
+        >
+          <i className="fas fa-credit-card"></i>
+          Recharge
+        </button>
+        
+        {/* Login button - visible on desktop */}
+        <button className="login-btn desktop-only" onClick={() => alert('Login functionality would be implemented here')}>
+          <i className="fas fa-user"></i>
+          Login
+        </button>
+        
         {/* Mobile menu button */}
         <button 
           className="mobile-menu-btn"
@@ -52,11 +67,6 @@ const Navbar = ({ currentPage, currentProfile, credits, onNavigate, onBack, onFo
           aria-label="Toggle menu"
         >
           <i className="fas fa-bars"></i>
-        </button>
-        
-        {/* Desktop login button */}
-        <button className="login-btn desktop-only" onClick={() => alert('Login functionality would be implemented here')}>
-          Login
         </button>
       </div>
       
