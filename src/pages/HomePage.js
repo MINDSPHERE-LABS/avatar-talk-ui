@@ -116,10 +116,9 @@ const HomePage = ({ onNavigate }) => {
       {/* Show regular content only when not searching */}
       {!isSearching && (
         <>
-          {/* Horizontal Profile Slider - Show first 4 profiles */}
           <ProfileSlider 
             title="Latest Characters" 
-            profiles={featuredProfiles} 
+            profiles={profiles} 
             onViewProfile={handleViewProfile}
           />
 

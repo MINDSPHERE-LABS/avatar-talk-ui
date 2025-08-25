@@ -64,7 +64,7 @@
       "name": "Priya",
       "bio": "Professional dancer and choreographer. Specialized in contemporary and hip-hop.",
       "image": "https://res.cloudinary.com/dngqv0v0o/image/upload/v1756033271/anisha_i9f85z.jpg",
-      "isAdult": false,
+      "isAdult": true,
       "latestCharacter": "Dancer",
       "profileKey": "priya",
       "personality": "Energetic, creative, disciplined, expressive",
@@ -177,7 +177,35 @@
       "name": "Priya",
       "bio": "Professional photographer. Capturing moments that tell stories.",
       "image": "https://res.cloudinary.com/dngqv0v0o/image/upload/v1755943624/Riya_tm8ead.jpg",
-      "isAdult": false,
+      "isAdult": true,
+      "latestCharacter": "Photographer",
+      "profileKey": "rahul",
+      "personality": "Observant, creative, patient, technical",
+      "interests": ["Photography", "Art", "Technology", "Travel", "Nature"],
+      "likes": [
+        "Natural lighting",
+        "Candid moments",
+        "Storytelling through images",
+        "Technical challenges"
+      ],
+      "dislikes": [
+        "Forced poses",
+        "Poor lighting conditions",
+        "Rushed photoshoots"
+      ],
+      "dialogueStyle": "Rahul speaks with a focus on visual storytelling",
+      "sampleDialogues": [
+        "Every picture tells a story - what's yours?",
+        "The best light is right now, let's capture it.",
+        "Let's create something memorable together."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Malu",
+      "bio": "Professional photographer. Capturing moments that tell stories.",
+      "image": "https://res.cloudinary.com/dngqv0v0o/image/upload/v1755943624/Riya_tm8ead.jpg",
+      "isAdult": true,
       "latestCharacter": "Photographer",
       "profileKey": "rahul",
       "personality": "Observant, creative, patient, technical",

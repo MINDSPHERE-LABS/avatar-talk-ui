@@ -1,7 +1,12 @@
 import React from 'react';
 import ProfileCard from './ProfileCard';
+import '../../src/pages/HomePage.css';
 
 const ProfileSlider = ({ title, profiles, onViewProfile }) => {
+  const handleProfileClick = (profile) => {
+    onViewProfile(profile);
+  };
+
   return (
     <div className="slider-section">
       <h2 className="section-title">{title}</h2>
@@ -11,7 +16,10 @@ const ProfileSlider = ({ title, profiles, onViewProfile }) => {
             <ProfileCard 
               key={profile.id} 
               profile={profile} 
-              onViewProfile={onViewProfile}
+              onViewProfile={handleProfileClick}
+              showIndiaBadge={true}
+              showAdultBadge={profile.isAdult}
+              consistentLayout={true}
             />
           ))}
         </div>

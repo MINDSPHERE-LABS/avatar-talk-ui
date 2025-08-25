@@ -32,7 +32,7 @@
   margin-bottom: 10px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.03);
-  border-radius: 0px;
+  border-radius: 5px;
 }
 .tab-icon {
   background: var(--secondary-gradient);
@@ -459,7 +459,7 @@
   }
   
   .character-image {
-    height: 160px;
+    height: 250px;
   }
   
   .character-info {
@@ -480,4 +480,37 @@
 .character-image img,
 .featured-image img {
   cursor: pointer;
+}
+/* Ensure it works on all profile image containers */
+.profile-img-container .adult-badge,
+.character-image .adult-badge,
+.featured-image .adult-badge,
+.profile-header .profile-image .adult-badge
+.profiles-slider .adult-badge  {
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.5rem;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .adult-badge {
+    top: 2px;
+    right: 2px;
+    width: 24px;
+    height: 24px;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .adult-badge {
+    top: 5px;
+    right: 5px;
+    width: 22px;
+    height: 22px;
+    font-size: 0.55rem;
+  }
 }

@@ -1,10 +1,12 @@
 import profilesData from '../data/profiles.json';
 
 export const getAllProfiles = () => {
-  return profilesData.profiles;
+  return profilesData.profiles ;
+  // return profilesData;
 };
 
 export const getProfileById = (id) => {
+  //  const allProfiles = getAllProfiles();
   return profilesData.profiles.find(profile => profile.id === parseInt(id));
 };
 

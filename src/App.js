@@ -4,6 +4,8 @@ import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
 import RechargePage from './pages/RechargePage';
 import './App.css';
+import { setupScreenshotProtection } from './screenshotProtection';
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -11,6 +13,7 @@ function App() {
   const [credits, setCredits] = useState(150);
   const [navigationHistory, setNavigationHistory] = useState(['home']);
   const [historyIndex, setHistoryIndex] = useState(0);
+  const protection = setupScreenshotProtection();
 
   const handleNavigation = (page, profile = null) => {
     setCurrentPage(page);

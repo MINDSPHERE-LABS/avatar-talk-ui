@@ -23,10 +23,10 @@
   position: absolute;
   bottom: 15px;
   left: 15px;
-  z-index: 3;
+  z-index: 20;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 90px;
   flex-wrap: wrap;
 }
 
@@ -40,7 +40,8 @@
   font-weight: bold;
   margin: 0;
   padding: 5px 10px;
-  border-radius: 4px;
+  border-radius: 4px; 
+  z-index: 15;
 }
 
 /* India location badge */
@@ -82,6 +83,39 @@
   font-weight: bold;
 }
 
+/* Ensure it works on all profile image containers */
+.profile-img-container .adult-badge,
+.character-image .adult-badge,
+.featured-image .adult-badge,
+.profile-header .profile-image .adult-badge  {
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.5rem;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .adult-badge {
+    top: 2px;
+    right: 2px;
+    width: 24px;
+    height: 24px;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .adult-badge {
+    top: 5px;
+    right: 5px;
+    width: 22px;
+    height: 22px;
+    font-size: 0.55rem;
+  }
+}
+
 /* Gradient overlay for better text readability */
 .profile-image-container::before {
   content: '';
@@ -91,11 +125,11 @@
   right: 0;
   height: 60%;
   background: linear-gradient(to top, 
-    rgba(248, 236, 236, 0.892) 0%,
-    rgba(218, 209, 209, 0.465) 40%,
-    rgba(242, 237, 237, 0.092) 70%,
+    rgba(248, 236, 236, 0.641) 0%,
+    rgba(244, 241, 241, 0.309) 40%,
+    rgba(249, 249, 249, 0.032) 70%,
     transparent 100%);
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Profile bio container - will overlap the image */
@@ -126,7 +160,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  white-space: nowrap;
+  white-space: nowrap; 
 }
 
 /* Remove the old chat button from bio container */
@@ -193,6 +227,7 @@
   .profile-name-overlay h2 {
     font-size: 1.8rem;
     padding: 4px 8px;
+
   }
   
   .india-badge {
@@ -208,15 +243,15 @@
   .profile-name-overlay {
     bottom: 8px;
     left: 8px;
-    gap: 120px;
+    gap: 90px;
   }
   
-  .profile-image-container .adult-badge {
+  /* .profile-image-container .adult-badge {
     top: 8px;
     right: 8px;
     font-size: 0.8rem;
     padding: 3px 6px;
-  }
+  } */
   
   .profile-name-overlay .chat-now-btn {
     padding: 6px 12px;
