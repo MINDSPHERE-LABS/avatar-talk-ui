@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Blank Screenshot Protection */
+@media screen {
+  /* This will only apply to screen media (not print) */
+  body {
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* When screenshot is detected, show the overlay */
+  body.screenshot-detected::before {
+    opacity: 1;
+  }
+  
+  /* Watermark that's always visible to users but appears in screenshots */
+  body::after {
+    content: "Confidential - Unauthorized Copying Prohibited";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 10000;
+    pointer-events: none;
+  }
+}
+
+/* Ensure content is still visible to users */
+body > * {
+  position: relative;
+  z-index: 1;
+}
