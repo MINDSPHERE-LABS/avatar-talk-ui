@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
 import RechargePage from './pages/RechargePage';
+import LoginPage from './pages/LoginPage'; // Import the LoginPage
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { setupScreenshotProtection } from './screenshotProtection';
-// import RechargePage from './pages/RechargePage';
-
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -15,7 +13,14 @@ function App() {
   const [credits, setCredits] = useState(150);
   const [navigationHistory, setNavigationHistory] = useState(['home']);
   const [historyIndex, setHistoryIndex] = useState(0);
-  const protection = setupScreenshotProtection();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+  // Check if user is logged in on app load
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+  }, []);
 
   const handleNavigation = (page, profile = null) => {
     setCurrentPage(page);
@@ -50,8 +55,36 @@ function App() {
   };
 
   const handleRecharge = (amount) => {
+    // Check if user is logged in before allowing recharge
+    if (!isLoggedIn) {
+      setShowLogin(true);
+      return;
+    }
+    
     setCredits(credits + amount);
     handleNavigation('home');
+  };
+
+  const handleLoginClick = () => {
+    if (isLoggedIn) {
+      // Logout functionality
+      setIsLoggedIn(false);
+      localStorage.removeItem('isLoggedIn');
+      alert('Logged out successfully');
+    } else {
+      // Show login page
+      setShowLogin(true);
+    }
+  };
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+    setShowLogin(false);
+    localStorage.setItem('isLoggedIn', 'true');
+  };
+
+  const handleCloseLogin = () => {
+    setShowLogin(false);
   };
 
   // Determine if forward button should be enabled
@@ -65,6 +98,10 @@ function App() {
         credits={credits}
         onNavigate={handleNavigation}
         onBack={handleBack}
+        onForward={handleForward}
+        canGoForward={canGoForward}
+        isLoggedIn={isLoggedIn}
+        onLoginClick={handleLoginClick}
       />
 
       {currentPage === 'home' && (
@@ -82,6 +119,16 @@ function App() {
         <RechargePage
           onRecharge={handleRecharge}
           onNavigate={handleNavigation}
+          isLoggedIn={isLoggedIn}
+          onLoginRequired={() => setShowLogin(true)}
+        />
+      )}
+
+      {/* Login Modal/Page */}
+      {showLogin && (
+        <LoginPage
+          onLoginSuccess={handleLoginSuccess}
+          onClose={handleCloseLogin}
         />
       )}
     </div>

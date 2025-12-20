@@ -1,17 +1,24 @@
+// Updated Navbar.js
 import React, { useState } from 'react';
 
-const Navbar = ({ currentPage, currentProfile, credits, onNavigate, onBack, onForward, canGoForward }) => {
+const Navbar = ({ currentPage, currentProfile, credits, onNavigate, onBack, onForward, canGoForward, isLoggedIn, onLoginClick }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   
   const getTitle = () => {
     if (currentPage === 'profile' && currentProfile) {
       return currentProfile.name;
     }
-    return "Avatar Talk";
+    return "Pyarify";
   };
 
   const showBackButton = currentPage !== 'home';
   const showForwardButton = canGoForward;
+
+  // Function to handle menu item clicks
+  const handleMenuItemClick = (action) => {
+    setShowMobileMenu(false); // Close the menu
+    action(); // Execute the action
+  };
 
   return (
     <nav className="navbar">
@@ -39,13 +46,7 @@ const Navbar = ({ currentPage, currentProfile, credits, onNavigate, onBack, onFo
         )}
       </div>
       
-      <div className="nav-right">
-        <div className="credit-display">
-          <i className="fas fa-coins"></i>
-          <span>{credits} Credits</span>
-        </div>
-        
-        {/* Recharge button - visible on desktop */}
+      <div className="nav-right">  
         <button 
           className="login-btn desktop-only"
           onClick={() => onNavigate('recharge')}
@@ -54,13 +55,13 @@ const Navbar = ({ currentPage, currentProfile, credits, onNavigate, onBack, onFo
           Recharge
         </button>
         
-        {/* Login button - visible on desktop */}
-        <button className="login-btn desktop-only" onClick={() => alert('Login functionality would be implemented here')}>
+        {/* Login button - ALWAYS VISIBLE */}
+        {/* <button className="login-btn" onClick={onLoginClick}>
           <i className="fas fa-user"></i>
-          Login
-        </button>
+          {isLoggedIn ? 'Logout' : 'Login'}
+        </button> */}
         
-        {/* Mobile menu button */}
+        {/* Mobile menu button - Only show recharge in mobile menu */}
         <button 
           className="mobile-menu-btn"
           onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -70,18 +71,20 @@ const Navbar = ({ currentPage, currentProfile, credits, onNavigate, onBack, onFo
         </button>
       </div>
       
-      {/* Mobile menu dropdown */}
+      {/* Mobile menu dropdown - Only contains recharge now */}
       {showMobileMenu && (
         <div className="mobile-menu">
-          <button className="mobile-menu-item" onClick={() => alert('Login functionality would be implemented here')}>
-            <i className="fas fa-user"></i>
-            <span>Login</span>
-          </button>
-          <button className="mobile-menu-item" onClick={() => onNavigate('recharge')}>
+          <button 
+            className="mobile-menu-item" 
+            onClick={() => handleMenuItemClick(() => onNavigate('recharge'))}
+          >
             <i className="fas fa-credit-card"></i>
             <span>Recharge</span>
           </button>
-          <button className="mobile-menu-item" onClick={() => onNavigate('home')}>
+          <button 
+            className="mobile-menu-item" 
+            onClick={() => handleMenuItemClick(() => onNavigate('home'))}
+          >
             <i className="fas fa-home"></i>
             <span>Home</span>
           </button>

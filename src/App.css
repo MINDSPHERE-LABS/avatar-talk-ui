@@ -97,26 +97,23 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s;
-  min-height: 44px;
-  min-width: 44px;
+  min-height: 28px;
+  min-width: 55px;
 }
 
 .login-btn:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.credit-display {
+/* .credit-display {
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
   padding: 8px 15px;
   border-radius: 20px;
   font-weight: 500;
-}
+} */
 
-.credit-display i {
-  margin-right: 5px;
-}
 
 .mobile-menu-btn {
   display: none;
@@ -325,7 +322,7 @@ body {
   font-weight: bold;
   font-size: 0.3rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: 345;
 }
 
 /* ===== PROFILE PAGE STYLES ===== */
@@ -382,12 +379,12 @@ body {
   margin: 30px 0;
 }
 
-.attribute-box {
+/* .attribute-box { */
   /* background: white; */
   /* padding: 20px; */
   /* border-radius: 15px; */
   /* box-shadow: var(--shadow); */
-}
+/* } */
 
 .attribute-title {
   font-size: 1.2rem;
@@ -485,13 +482,10 @@ body {
     font-size: 0.9rem;
   }
 
-  .credit-display {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-  }
+ 
 
   .login-btn {
-    padding: 6px 12px;
+    padding: 6px 10px;
     font-size: 0.9rem;
   }
 
@@ -580,17 +574,17 @@ body {
   }
 
   .nav-right {
-    gap: 10px;
+    gap: 20px;
   }
 
-  .credit-display {
+  /* .credit-display {
     padding: 5px 10px;
     font-size: 0.8rem;
   }
 
   .credit-display i {
     margin-right: 3px;
-  }
+  } */
 
   .login-btn {
     padding: 5px 10px;

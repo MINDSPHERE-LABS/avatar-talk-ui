@@ -1,1 +1,14 @@
-npm start -- -H 0.0.0.0 -p 3000
+npm start -- -H 0.0.0.0 -p 3002
+
+
+,
+    {
+      "id": 4,
+      "name": "Ultimate Pack",
+      "price": 999,
+      "credits": 1500,
+      "popular": false,
+      "validity": 90,
+      "features": ["1500 Chat Credits", "90 Days Validity", "24/7 Premium Support", "5 Free Profile Unlocks", "All Exclusive Characters", "Early Access to New Features"],
+      "isActive": true
+    }
