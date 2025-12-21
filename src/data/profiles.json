@@ -63,7 +63,7 @@
     },
     {
       "id": 3,
-      "name": "Meena",
+      "name": "Shabnam",
       "botUsername":"Meena81_Bot",
       "bio": "Professional dancer and choreographer. Specialized in contemporary and hip-hop.",
       "image": "https://res.cloudinary.com/drjh92dah/image/upload/v1766325645/meena_f8lvm7.jpg",
@@ -210,7 +210,7 @@
     {
       "id": 8,
       "name": "Naina Singh",
-      "botUsername":"maluBot",
+      "botUsername":"qibloBot",
       "bio": "Professional photographer. Capturing moments that tell stories.",
       "image": "https://res.cloudinary.com/drjh92dah/image/upload/v1766325645/Naina_gb3fyn.jpg",
       "isAdult": true,
