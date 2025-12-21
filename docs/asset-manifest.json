@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/avatar-talk-ui/static/css/main.b685b2b6.css",
+    "main.js": "/avatar-talk-ui/static/js/main.bd5fbd87.js",
+    "index.html": "/avatar-talk-ui/index.html",
+    "main.b685b2b6.css.map": "/avatar-talk-ui/static/css/main.b685b2b6.css.map",
+    "main.bd5fbd87.js.map": "/avatar-talk-ui/static/js/main.bd5fbd87.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b685b2b6.css",
+    "static/js/main.bd5fbd87.js"
+  ]
+}
