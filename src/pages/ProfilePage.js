@@ -11,7 +11,7 @@ const ProfilePage = ({ profile, onNavigate }) => {
   useEffect(() => {
     // Scroll to top when component mounts or profile changes
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+
     if (profile) {
       // Get full profile details by ID
       const profileDetails = getProfileById(profile.id);
@@ -20,7 +20,7 @@ const ProfilePage = ({ profile, onNavigate }) => {
       // Get ALL profiles (remove the slice limit)
       const allProfilesData = getAllProfiles();
       setAllProfiles(allProfilesData);
-      
+
       // Get related profiles (all except current, without limiting)
       const related = allProfilesData.filter(p => p.id !== profile.id);
       setRelatedProfiles(related);
@@ -39,10 +39,16 @@ const ProfilePage = ({ profile, onNavigate }) => {
   };
 
   const handleStartChat = () => {
-    if (!fullProfile) return;
-    // const botUsername = "Proff_Minakshi_bot";
-    const chatUrl = `https://t.me/${fullProfile.botUsername}?=p_${fullProfile.name.toLowerCase()}`;
-    window.open(chatUrl, '_blank');
+
+    if (!fullProfile?.botUsername) return;
+
+    const chatUrl = `https://t.me/${fullProfile.botUsername}`;
+    window.open(chatUrl, '_blank', 'noopener,noreferrer');
+
+    // if (!fullProfile) return;
+    // // const botUsername = "Proff_Minakshi_bot";
+    // const chatUrl = `https://t.me/${fullProfile.botUsername}?=p_${fullProfile.name.toLowerCase()}`;
+    // window.open(chatUrl, '_blank');
   };
 
   if (!fullProfile) {
@@ -55,7 +61,7 @@ const ProfilePage = ({ profile, onNavigate }) => {
         {/* Profile Image Container */}
         <div className="profile-image-container">
           <img src={fullProfile.image} alt={fullProfile.name} />
-          
+
           {/* Name Overlay at bottom left corner with Chat Button */}
           <div className="profile-name-overlay">
             <h2>{fullProfile.name}</h2>
@@ -63,17 +69,17 @@ const ProfilePage = ({ profile, onNavigate }) => {
               <i className="fab fa-telegram"></i> Chat Now
             </button>
           </div>
-          
+
           {/* India Location Badge */}
           <div className="india-badge">
             <i className="fas fa-map-marker-alt"></i>
             <span>India</span>
           </div>
-          
+
           {/* 18+ Badge - Show if profile is adult */}
           {isAdultProfile && <div className="adult-badge">18+</div>}
         </div>
-        
+
         {/* Profile Bio Container - Overlaps the image */}
         <div className="profile-bio-container">
           <p className="profile-description">{fullProfile.bio}</p>
