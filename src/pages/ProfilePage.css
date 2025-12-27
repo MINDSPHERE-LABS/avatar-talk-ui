@@ -108,7 +108,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    z-index: 2335;
+    z-index: 1;
     background: rgba(201, 46, 46, 0.667);
     color: rgba(255, 255, 255, 0.655);
     padding: 4px 8px;

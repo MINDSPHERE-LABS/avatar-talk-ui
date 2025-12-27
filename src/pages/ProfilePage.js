@@ -38,18 +38,34 @@ const ProfilePage = ({ profile, onNavigate }) => {
     }, 100);
   };
 
+  // const handleStartChat = () => {
+
+  //   if (!fullProfile?.botUsername) return;
+
+  //   const chatUrl = `https://t.me/${fullProfile.botUsername}`;
+    
+  //   // const chatUrl = `https://t.me/Meena83_Bot`;
+  //   window.open(chatUrl, '_blank', 'noopener,noreferrer');
+
+  // };
   const handleStartChat = () => {
+  if (!fullProfile?.botUsername) return;
 
-    if (!fullProfile?.botUsername) return;
+  const chatUrl = `https://t.me/${fullProfile.botUsername}`;
 
-    const chatUrl = `https://t.me/${fullProfile.botUsername}`;
-    window.open(chatUrl, '_blank', 'noopener,noreferrer');
+  // ✅ Create a temporary anchor (browser-safe)
+  const link = document.createElement('a');
+  link.href = chatUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
 
-    // if (!fullProfile) return;
-    // // const botUsername = "Proff_Minakshi_bot";
-    // const chatUrl = `https://t.me/${fullProfile.botUsername}?=p_${fullProfile.name.toLowerCase()}`;
-    // window.open(chatUrl, '_blank');
-  };
+  // Required for Firefox
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+
 
   if (!fullProfile) {
     return <div>Loading...</div>;
